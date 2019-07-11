@@ -10,3 +10,6 @@
 [submodule "ant-media-server/Ant-Media-Server"]
 	path = ant-media-server/Ant-Media-Server
 	url = https://github.com/ant-media/Ant-Media-Server.git
+[submodule "ant-media-server/obs-studio"]
+	path = ant-media-server/obs-studio
+	url = https://github.com/obsproject/obs-studio.git
