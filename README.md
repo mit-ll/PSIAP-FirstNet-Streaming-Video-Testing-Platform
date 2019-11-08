@@ -4,11 +4,11 @@ Software architecture used for testing at FirstNet Test and Innovation Lab
 This architecture contains a set of tools that were used for testing the performance of streaming video un
 der various loads at the FistNet Test and Innovation Lab. The architecture consists of three primary compo
 nents:
-1.  FirstNet Testing App (Android)
-2.  OBS Studio (desktop)
-3.  ANT Media server (server)
+1.  FirstNet Testing App (android/)
+2.  OBS Studio (streaming/obs-studio)
+3.  ANT Media Server (streaming/ant-media-server)
 
-The FirstNet Testing App is an Android mobile application written in Java. It is able to stream a local media file from the mobile device to a remote server running the ANT Media server using the RTMP protocol. It is also able to subscribe to an RTMP stream that is broadcast from a machine running OBS Studio (desktop) and save the stream as a recording.
+The FirstNet Testing App is an Android mobile application written in Java. It is able to stream a local media file from the mobile device to a remote server running the ANT Media server using the RTMP protocol. It is also able to subscribe to an RTMP stream that is broadcast from a machine running OBS Studio and save the stream as a recording.
 
 The software was developed to facilitate evaluating the performance of the FirstNet wireless network as part of the NIST PSIAP initiative. The software implements basic functions for streaming video data to/from
 mobile devices via commonly used protocols.

@@ -1,9 +1,3 @@
-[submodule "devicehive/devicehive-docker"]
-	path = devicehive/devicehive-docker
-	url = https://github.com/devicehive/devicehive-docker.git
-[submodule "devicehive/devicehive-video-analysis"]
-	path = devicehive/devicehive-video-analysis
-	url = https://github.com/devicehive/devicehive-video-analysis.git
 [submodule "android/PSIAP-analytic-tester"]
 	path = android/PSIAP-analytic-tester
 	url = git@llcad-github.llan.ll.mit.edu:HADR/PSIAP-analytic-tester.git
