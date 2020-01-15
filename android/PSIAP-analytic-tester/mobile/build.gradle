@@ -1,0 +1,119 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
+    defaultConfig {
+        applicationId "edu.mit.ll.hadr.psiapanalytictester"
+        minSdkVersion 24
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        externalNativeBuild {
+            cmake {
+                cppFlags ""
+            }
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/plexus/components.xml'
+        exclude 'META-INF/DEPENDENCIES'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
+        }
+    }
+}
+
+ext {
+    adapter_rxjava2 = "2.2.0"
+    analytics = "11.6.0"
+    android_support = "28.0.0"
+    butter_knife = "8.8.1"
+    constraint_layout = "1.1.3"
+    eventbus = "3.1.1"
+    multidex = "1.0.2"
+    permissions_dispatcher = "3.0.1"
+    rxandroid = "2.0.1"
+    rxjava = "2.1.3"
+    rxlocation = "1.0.3"
+    timber = "4.5.1"
+    devicehive = "3.0.5"
+    ok_http = "3.6.0"
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+
+    // Ant-media-server
+    implementation 'net.butterflytv.utils:rtmp-client:3.0.1'
+
+    // VLC
+    implementation 'de.mrmaffen:libvlc-android:2.1.12@aar'
+
+    //Android Support Library
+    implementation "com.android.support:appcompat-v7:${android_support}"
+    implementation "com.android.support:design:${android_support}"
+    implementation "com.android.support:customtabs:${android_support}"
+    implementation "com.android.support:cardview-v7:${android_support}"
+    implementation "com.android.support:recyclerview-v7:${android_support}"
+    implementation "com.android.support:preference-v7:${android_support}"
+    implementation "com.android.support.constraint:constraint-layout:${constraint_layout}"
+    implementation 'com.android.support:support-v4:28.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    //  devicehive and tensorflow dependencies
+    implementation "com.github.devicehive:devicehive-java:${devicehive}"
+    implementation 'org.tensorflow:tensorflow-android:+'
+    implementation "org.greenrobot:eventbus:${eventbus}"
+
+    //Logging
+    implementation "com.jakewharton.timber:timber:${timber}"
+
+    //ButterKnife
+    implementation "com.jakewharton:butterknife:${butter_knife}"
+    annotationProcessor "com.jakewharton:butterknife-compiler:${butter_knife}"
+
+    //PermissionsDispatcher
+    implementation("com.github.hotchemi:permissionsdispatcher:${permissions_dispatcher}") {
+        // if you don't use android.app.Fragment you can exclude support for them
+        exclude module: "support-v13"
+    }
+    annotationProcessor "com.github.hotchemi:permissionsdispatcher-processor:${permissions_dispatcher}"
+
+    //RxJava
+    implementation "io.reactivex.rxjava2:rxandroid:${rxandroid}"
+    implementation "io.reactivex.rxjava2:rxjava:${rxjava}"
+    implementation 'com.google.android.gms:play-services-gcm:11.6.0'
+    implementation 'pl.charmas.android:android-reactive-location2:2.0@aar'
+    implementation 'com.google.android.gms:play-services-location:11.6.0'
+
+    //you can use newer GMS version if you need
+    implementation 'com.google.android.gms:play-services-places:11.6.0'
+
+    // rtsp stuff
+    implementation project(':libstreaming')
+    implementation project(':liveVideoBroadcasterSDK')
+
+    // websocket lib
+    implementation "com.squareup.okhttp3:okhttp:${ok_http}"
+}

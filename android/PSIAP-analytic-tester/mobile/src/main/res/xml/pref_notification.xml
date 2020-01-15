@@ -1,0 +1,35 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <SwitchPreference
+        android:defaultValue="true"
+        android:key="psiap_https"
+        android:title="@string/pref_https" />
+
+    <EditTextPreference
+        android:defaultValue="localhost"
+        android:title="@string/pref_serverhost"
+        android:key="psiap_server" />
+
+    <EditTextPreference
+        android:defaultValue="80"
+        android:title="@string/pref_serverport"
+        android:key="psiap_port" />
+
+    <EditTextPreference
+        android:defaultValue="rtsp://localhost/"
+        android:title="@string/pref_rtspurl"
+        android:key="psiap_rtsp_url" />
+
+    <EditTextPreference
+        android:title="@string/pref_dh_deviceid"
+        android:key="psiap_dh_deviceid" />
+
+    <EditTextPreference
+        android:title="@string/pref_dh_access_token"
+        android:key="psiap_dh_access" />
+
+    <EditTextPreference
+        android:title="@string/pref_dh_refresh_token"
+        android:key="psiap_dh_refresh" />
+
+</PreferenceScreen>
